@@ -77,6 +77,7 @@ initMap = () => {
         zoom: 12,
         scrollWheelZoom: false
       });
+      console.log('about to start map token in main.js');
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
     mapboxToken: 'pk.eyJ1IjoibW9yd2ljayIsImEiOiJjanI4MXk3ZHkwMXBsNDltcGtoZHd3YXk0In0.E7Rg2MMYodNzfFO02s6CcA',
     maxZoom: 18,
