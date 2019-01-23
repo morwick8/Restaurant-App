@@ -82,16 +82,24 @@ fetchRestaurantFromURL = (callback) => {
  */
 fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById('restaurant-name');
+  name.setAttribute('tabindex', '0');
+  name.setAttribute('aria-label', 'restaurant.name');
   name.innerHTML = restaurant.name;
 
   const address = document.getElementById('restaurant-address');
+  address.setAttribute('tabindex', '0');
+  address.setAttribute('aria-label', 'restaurant.address');
   address.innerHTML = restaurant.address;
 
   const image = document.getElementById('restaurant-img');
-  image.className = 'restaurant-img'
+  image.className = 'restaurant-img';
+  image.setAttribute('tabindex', '0');
+  image.setAttribute('aria-label', 'restaurant.image');
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
 
   const cuisine = document.getElementById('restaurant-cuisine');
+  cuisine.setAttribute('tabindex', '0');
+  cuisine.setAttribute('aria-label', 'restaurant.cuisine_type');
   cuisine.innerHTML = restaurant.cuisine_type;
 
   // fill operating hours
@@ -116,6 +124,8 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
 
     const time = document.createElement('td');
     time.innerHTML = operatingHours[key];
+    hours.setAttribute('tabindex', '0');
+    hours.setAttribute('aria-label', 'key+operatingHours');
     row.appendChild(time);
 
     hours.appendChild(row);
@@ -134,10 +144,14 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   if (!reviews) {
     const noReviews = document.createElement('p');
     noReviews.innerHTML = 'No reviews yet!';
+    noReview.setAttribute('tabindex', '0');
+    noReviews.setAttribute('aria-label', 'No reviews yet');
     container.appendChild(noReviews);
     return;
   }
   const ul = document.getElementById('reviews-list');
+  ul.setAttribute('tabindex', '0');
+  ul.setAttribute('aria-labelledby', 'List of Reviews');
   reviews.forEach(review => {
     ul.appendChild(createReviewHTML(review));
   });
@@ -151,19 +165,30 @@ createReviewHTML = (review) => {
   const li = document.createElement('li');
   const name = document.createElement('p');
   name.innerHTML = review.name;
+  li.setAttribute('tabindex', '0');
+  li.setAttribute('aria-label', 'review.name');
   li.appendChild(name);
 
   const date = document.createElement('p');
   date.innerHTML = review.date;
+  li.setAttribute('tabindex', '0');
+  li.setAttribute('aria-label', 'review.date');
   li.appendChild(date);
+
 
   const rating = document.createElement('p');
   rating.innerHTML = `Rating: ${review.rating}`;
+  li.setAttribute('tabindex', '0');
+  li.setAttribute('aria-label', '${review.rating}');
   li.appendChild(rating);
+
 
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
+  li.setAttribute('tabindex', '0');
+  li.setAttribute('aria-label', 'review.comments');
   li.appendChild(comments);
+ 
 
   return li;
 }
