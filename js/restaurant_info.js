@@ -96,11 +96,11 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   image.setAttribute('tabindex', '0');
   image.setAttribute('alt', restaurant.name);
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
-
+  
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.setAttribute('tabindex', '0');
   cuisine.setAttribute('attr.aria-label', restaurant.cuisine_type);
-  cuisine.innerHTML = restaurant.cuisine_type;
+  cuisine.innerHTML = restaurant.cuisine_type + ' CUISINE';
 
   // fill operating hours
   if (restaurant.operating_hours) {
