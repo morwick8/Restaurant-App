@@ -1,34 +1,32 @@
-# Mobile Web Specialist Certification Course
+# Restaurant Reviews App
 ---
-#### _Three Stage Course Material Project - Restaurant Reviews_
+This is a project based on code provided by Udacity, Inc. It has been modified from the original code to include responsive design, accessibility, and offline use.
 
-## Project Overview: Stage 1
+## What the Restaurant Reviews App Does
 
-For the **Restaurant Reviews** projects, you will incrementally convert a static webpage to a mobile-ready web application. In **Stage One**, you will take a static design that lacks accessibility and convert the design to be responsive on different sized displays and accessible for screen reader use. You will also add a service worker to begin the process of creating a seamless offline experience for your users.
+With this app, users can locate, learn about, and see reviews for various restaurants in the New York City area. Users can find restaurants via a map, or they can filter restaurants by neighborhood or type of cuisine. Once users have selected a restaurant, they can get hours of operation plus read reviews.
 
-### Specification
+### Responsive Design
 
-You have been provided the code for a restaurant reviews website. The code has a lot of issues. It’s barely usable on a desktop browser, much less a mobile device. It also doesn’t include any standard accessibility features, and it doesn’t work offline at all. Your job is to update the code to resolve these issues while still maintaining the included functionality.
+The original code has been modified with a responsive design, so that users can have a great experience if accessing the app from a desktop or mobile devices.
 
-### Project Rubric
+### Accessibility
 
-Your project will be evaluated by a Udacity code reviewer according to the [Restaurant Reviews project rubric](https://review.udacity.com/#!/rubrics/1090/view). Please review for detailed project requirements. The rubric should be a resource you refer to periodically to make sure your project meets specifications.
+The code has been modified so that users can use their favorite screen reader such as ChromeVox to navigate through the site using the TAB key, arrow keys, and ENTER.
+
+### Caching for Offline Use
+
+Another feature that has been added is a caching. If you've visited the site before, you will still be able to access its great features even if you temporarily lose web access to the page.
 
 ### What do I do from here?
 
-1. In this folder, start up a simple HTTP server to serve up the site files on your local computer. Python has some simple tools to do this, and you don't even need to know Python. For most people, it's already installed on your computer.
+1. Download/unzip or clone this github repository to your computer.
 
-    * In a terminal, check the version of Python you have: `python -V`. If you have Python 2.x, spin up the server with `python -m SimpleHTTPServer 8000` (or some other port, if port 8000 is already in use.) For Python 3.x, you can use `python3 -m http.server 8000`. If you don't have Python installed, navigate to Python's [website](https://www.python.org/) to download and install the software.
-   * Note -  For Windows systems, Python 3.x is installed as `python` by default. To start a Python 3.x server, you can simply enter `python -m http.server 8000`.
-2. With your server running, visit the site: `http://localhost:8000`, and look around for a bit to see what the current experience looks like.
-3. Explore the provided code, and start making a plan to implement the required features in three areas: responsive design, accessibility and offline use.
-4. Write code to implement the updates to get this site on its way to being a mobile-ready website.
+2. In the Restaurant App folder, start up a simple HTTP server to serve up the site files on your local computer. In a terminal, check the version of Python you have: `python -V`. If you have Python 2.x, spin up the server with `python -m SimpleHTTPServer 8200` (or some other port. For Python 3.x, you can use `python3 -m http.server 8200`. If you don't have Python installed, navigate to Python's [website](https://www.python.org/) to download and install the software.
 
-## Leaflet.js and Mapbox:
+3. With your server running, visit the site: `http://localhost:8200`, and look around for a bit to see what the current experience looks like.
 
-This repository uses [leafletjs](https://leafletjs.com/) with [Mapbox](https://www.mapbox.com/). You need to replace `<your MAPBOX API KEY HERE>` with a token from [Mapbox](https://www.mapbox.com/). Mapbox is free to use, and does not require any payment information.
+4. Get the ChromeVox extension, and try navigating the site using the TAB, arrow, and ENTER keys.
 
-### Note about ES6
 
-Most of the code in this project has been written to the ES6 JavaScript specification for compatibility with modern web browsers and future-proofing JavaScript code. As much as possible, try to maintain use of ES6 in any additional JavaScript you write.
 #Restaurant-App
