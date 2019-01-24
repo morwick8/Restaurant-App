@@ -22,7 +22,7 @@ Another feature that has been added is a caching. If you've visited the site bef
 
 1. Download/unzip or clone this github repository to your computer.
 
-2. In the Restaurant App folder, start up a simple HTTP server to serve up the site files on your local computer. In a terminal, check the version of Python you have: `python -V`. If you have Python 2.x, spin up the server with `python -m SimpleHTTPServer 8200` (or some other port. For Python 3.x, you can use `python3 -m http.server 8200`. If you don't have Python installed, navigate to Python's [website](https://www.python.org/) to download and install the software.
+2. In the Restaurant App folder, start up a simple HTTP server to serve up the site files on your local computer. In a terminal, check the version of Python you have: `python -V`. If you have Python 2.x, spin up the server with `python -m SimpleHTTPServer 8222` (or some other port. For Python 3.x, you can use `python3 -m http.server 8200`. If you don't have Python installed, navigate to Python's [website](https://www.python.org/) to download and install the software.
 
 3. With your server running, visit the site: `http://localhost:8200`, and look around for a bit to see what the current experience looks like.
 
