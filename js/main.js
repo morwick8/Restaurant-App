@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   initMap(); // added 
   fetchNeighborhoods();
   fetchCuisines();
+  console.log('fetched cuisines');
 });
 
 /**
@@ -36,7 +37,6 @@ fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
     const option = document.createElement('option');
     option.innerHTML = neighborhood;
     option.value = neighborhood;
-    option.setAttribute('role', 'option');
     select.append(option);
   });
 }
@@ -65,7 +65,7 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
     const option = document.createElement('option');
     option.innerHTML = cuisine;
     option.value = cuisine;
-    option.setAttribute('role', 'option');
+    /*option.setAttribute('role', 'option');*/
     select.append(option);
   });
 }
@@ -164,25 +164,25 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
-  image.setAttribute('alt', 'restaurant.name');
+  image.setAttribute('alt', restaurant.name);
   image.setAttribute('tabindex', '0');
-   li.append(image);
+  li.append(image);
 
   const name = document.createElement('h1');
-  name.setAttribute('aria-label', 'restaurant.name');
+  name.setAttribute('attr.aria-label', restaurant.name);
   name.setAttribute('tabindex', '0');
   name.innerHTML = restaurant.name;
   li.append(name);
 
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;
-  neighborhood.setAttribute('aria-label', 'restaurant.neighborhood');
+  neighborhood.setAttribute('attr.aria-label', restaurant.neighborhood);
   neighborhood.setAttribute('tabindex', '0');
   li.append(neighborhood);
 
   const address = document.createElement('p');
   address.innerHTML = restaurant.address;
-  address.setAttribute('aria-label', 'restaurant.address');
+  address.setAttribute('attr.aria-label', restaurant.address);
   address.setAttribute('tabindex', '0');
   li.append(address);
 
@@ -190,7 +190,7 @@ createRestaurantHTML = (restaurant) => {
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
   more.setAttribute('role', 'link');
-  more.setAttribute('aria-label', 'Link to More Details');
+  more.setAttribute('attr.aria-label', 'Link to More Details');
   more.setAttribute('tabindex', '0');
 
   li.append(more)
